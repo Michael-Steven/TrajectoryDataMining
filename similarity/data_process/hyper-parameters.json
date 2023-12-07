@@ -1,0 +1,22 @@
+{
+  "region":
+  {
+    "cityname":"porto",
+    "minlon":-8.735152,
+    "minlat":40.953673,
+    "maxlon":-8.156309,
+    "maxlat":41.307945,
+    "cellsize":100.0,
+    "minfreq":100
+  },
+  "geolife":
+  {
+    "cityname":"geolife",
+    "minlon":116.25,
+    "minlat":39.8,
+    "maxlon":116.5,
+    "maxlat":40.1,
+    "cellsize":100.0,
+    "minfreq":100
+  }
+}

@@ -1,0 +1,12 @@
+log/
+outputs_exp1/
+outputs_exp2/
+outputs_encoder/
+track/
+exp2_results/
+batch_results/
+data/
+pretrained/
+experiment/
+__pycache__/
+test/
