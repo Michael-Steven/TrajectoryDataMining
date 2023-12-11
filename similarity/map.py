@@ -169,7 +169,7 @@ batch_size = 128
 bidirectional = 0
 n_layers = 1
 freeze = 1
-infer = 0
+infer = 1
 max_vocab_size = 18924
 device = "cuda:5"
 features_type = "encoder"
@@ -187,7 +187,7 @@ if infer == 1:
     test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
     features_list = []
-    grids_list = []
+    # grids_list = []
     with torch.no_grad():
         model.eval()
         for batch in tqdm(test_dataloader):
@@ -197,16 +197,16 @@ if infer == 1:
             features_list.append(features.cpu())
         features_list = torch.cat(features_list, dim=0).numpy()
 
-    with open(test_data_path) as f:
-        for traj in f:
-            traj = [int(point) for point in traj.strip().split(" ")]
-            if len(traj) > max_len:
-                traj = traj[:max_len]
-                traj_len = max_len
-            grids_list.append(traj)
+    # with open(test_data_path) as f:
+    #     for traj in f:
+    #         traj = [int(point) for point in traj.strip().split(" ")]
+    #         if len(traj) > max_len:
+    #             traj = traj[:max_len]
+    #             traj_len = max_len
+    #         grids_list.append(traj)
 
     pickle.dump(features_list, open("./outputs_encoder/geolife_features.pkl", "wb"))
-    pickle.dump(grids_list, open("./outputs_encoder/geolife_grids.pkl", "wb"))
+    # pickle.dump(grids_list, open("./outputs_encoder/geolife_grids.pkl", "wb"))
     trajs_list = []
     with open("/home1/shanyanbo/design/similarity/experiment/geolife/exp1/exp1-gps.t", "r") as f:
         lines = f.readlines()

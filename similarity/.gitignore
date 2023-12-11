@@ -7,6 +7,8 @@ exp2_results/
 batch_results/
 data/
 pretrained/
-experiment/
+experiment/geolife/exp1/
+experiment/porto/exp1/
+experiment/porto/exp2/
 __pycache__/
 test/
